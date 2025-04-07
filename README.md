@@ -141,7 +141,7 @@ Este projeto está licenciado sob a [MIT License](https://opensource.org/license
 Se tiver dúvidas ou sugestões, entre em contato:
 
 - **E-mail:** adriellisonki@gmail.com
-- **LinkedIn:** [Seu Nome](https://linkedin.com/in/adriellison)
+- **LinkedIn:** [Adriellison Ferreira](https://linkedin.com/in/adriellison)
 
 ---
 
