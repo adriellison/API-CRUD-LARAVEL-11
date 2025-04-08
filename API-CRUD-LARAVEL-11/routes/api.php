@@ -7,5 +7,5 @@ Route::get('/users', function (Request $request) {
     return response()->json([
         'status' => true,
         'message' => 'Lista de usuarios',
-    ]);
+    ],200);
 });
