@@ -8,7 +8,7 @@ Este projeto é uma API desenvolvida com o framework Laravel 11, que implementa 
 
 - **[PHP](https://www.php.net/)** ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=white&style=flat-square)
 - **[Laravel 11](https://laravel.com/)** ![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?logo=laravel&logoColor=white&style=flat-square)
-- **[MySQL](https://www.mysql.com/)** ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square)
+- **[PostgreSQL](https://www.postgresql.org/)** ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white&style=flat-square)
 - **[Composer](https://getcomposer.org/)** ![Composer](https://img.shields.io/badge/-Composer-885630?logo=composer&logoColor=white&style=flat-square)
 - **[Postman](https://www.postman.com/)** ![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=postman&logoColor=white&style=flat-square)
 
@@ -38,6 +38,39 @@ API-CRUD-LARAVEL-11/
 └── README.md
 ```
 
+### Explicação da Estrutura
+
+- **`app/`**: Contém a lógica principal da aplicação.
+  - **`Http/`**: Inclui os controladores e middlewares. Os controladores processam as requisições HTTP e retornam respostas.
+  - **`Models/`**: Contém os modelos que representam as tabelas do banco de dados e encapsulam a lógica de negócios.
+  - **`Providers/`**: Contém os provedores de serviços, usados para registrar serviços e funcionalidades na aplicação.
+
+- **`config/`**: Contém os arquivos de configuração da aplicação, como banco de dados, cache, filas, e-mail, etc.
+
+- **`database/`**: Contém arquivos relacionados ao banco de dados.
+  - **`migrations/`**: Scripts para criar, alterar ou excluir tabelas no banco de dados.
+  - **`seeders/`**: Scripts para popular o banco de dados com dados iniciais.
+
+- **`public/`**: Contém arquivos públicos acessíveis pelo navegador, como o arquivo `index.php` (ponto de entrada da aplicação), imagens, CSS e JavaScript.
+
+- **`resources/`**: Contém os recursos da aplicação.
+  - **`views/`**: Arquivos Blade (template engine do Laravel) para renderizar páginas HTML.
+  - **`lang/`**: Arquivos de tradução para suporte a múltiplos idiomas.
+
+- **`routes/`**: Contém os arquivos de rotas da aplicação.
+  - **`api.php`**: Define as rotas para a API.
+  - **`web.php`**: Define as rotas para a interface web.
+
+- **`storage/`**: Contém arquivos gerados pela aplicação, como logs, cache, uploads e arquivos temporários.
+
+- **`tests/`**: Contém os testes automatizados da aplicação, organizados em testes de unidade e testes de funcionalidade.
+
+- **Arquivos na raiz do projeto**:
+  - **`.env`**: Arquivo de configuração do ambiente, onde são definidas variáveis como credenciais de banco de dados, chaves de API, etc.
+  - **`artisan`**: Ferramenta de linha de comando do Laravel para executar tarefas como migrações, criação de controladores, etc.
+  - **`composer.json`**: Arquivo de configuração do Composer, que gerencia as dependências do projeto.
+  - **`README.md`**: Documentação do projeto.
+
 ---
 
 ## 🛠️ Como Configurar o Projeto
@@ -48,7 +81,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 - **[PHP 8.2+](https://www.php.net/)**
 - **[Composer](https://getcomposer.org/)**
-- **[MySQL](https://www.mysql.com/)**
+- **[PostgreSQL](https://www.postgresql.org/)**
 - **[Git](https://git-scm.com/)**
 
 ### 2️⃣ Clonar o Repositório
@@ -115,17 +148,23 @@ A API estará disponível em `http://localhost:8000`.
 
 1. Faça um fork do projeto.
 2. Crie uma branch para sua feature ou correção de bug:
+
    ```bash
    git checkout -b minha-feature
    ```
+
 3. Faça as alterações necessárias e commit:
+
    ```bash
    git commit -m "Descrição da minha feature"
    ```
+
 4. Envie para o repositório remoto:
+
    ```bash
    git push origin minha-feature
    ```
+
 5. Abra um Pull Request.
 
 ---
@@ -140,7 +179,7 @@ Este projeto está licenciado sob a [MIT License](https://opensource.org/license
 
 Se tiver dúvidas ou sugestões, entre em contato:
 
-- **E-mail:** adriellisonki@gmail.com
+- **E-mail:** <adriellisonki@gmail.com>
 - **LinkedIn:** [Adriellison Ferreira](https://linkedin.com/in/adriellison)
 
 ---
