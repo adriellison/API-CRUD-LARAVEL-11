@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Route;
 //     ],200);
 // });
 
+// Rota para listar todos os usuários
 Route::get('/users', [UserController::class, 'index']);
-
+// Rota para listar um usuário específico
 Route::get('/users/{user}', [UserController::class, 'show']);
+// Rota para criar um novo usuário
+Route::post('/users',[UserController::class, 'store']);

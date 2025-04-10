@@ -5,4 +5,7 @@ GET http://127.0.0.1:8000/api/users
 GET http://127.0.0.1:8000/api/users?page=1
 
 ### GET USER BY ID
-GET http://127.0.0.1:8000/api/users/1
+GET http://127.0.0.1:8000/api/users/5
+
+### PUT USER - Não pode ser testado o endpoint por aqui, a extensão REST Client não suporta o método PUT, então use outro cliente HTTP, como o Postman ou Insomnia.
+PUT http://127.0.1:8000/api/users/name
