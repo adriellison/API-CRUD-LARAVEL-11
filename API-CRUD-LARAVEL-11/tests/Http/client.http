@@ -9,3 +9,9 @@ GET http://127.0.0.1:8000/api/users/5
 
 ### PUT USER - Não pode ser testado o endpoint por aqui, a extensão REST Client não suporta o método PUT, então use outro cliente HTTP, como o Postman ou Insomnia.
 PUT http://127.0.1:8000/api/users/name
+
+### DELETE USER BY ID
+DELETE http://127.0.0.1:8000/api/users/5
+
+### LOGIN
+POST http://127.0.0.1:8000/api/login
