@@ -16,3 +16,5 @@ Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{user}', [UserController::class, 'show']);
 // Rota para criar um novo usuário
 Route::post('/users',[UserController::class, 'store']);
+// Rota para atualizar um usuário específico
+Route::put('/users/{user}', [UserController::class, 'update']);

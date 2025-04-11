@@ -6,6 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password as RulesPassword;
 
 class UserRequest extends FormRequest
@@ -33,10 +34,16 @@ class UserRequest extends FormRequest
 
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email' . ($userId ? $userId->id : null), // se não for null, não valida o email
-            'password' => ['required', RulesPassword::min(8) // mínimo 8 caracteres
-                                                -> letters() // letras
-                                                ->numbers()] // números
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users', 'email')->ignore($userId), // ignora o id do usuário que está sendo atualizado
+            ],//'required|email|unique:users,email' . ($userId ? $userId->id : null), // se não for null, não valida o email
+            'password' => [
+                'required',
+                RulesPassword::min(8) // mínimo 8 caracteres
+                    -> letters() // letras
+                    ->numbers()] // números
         ];
     }
 
