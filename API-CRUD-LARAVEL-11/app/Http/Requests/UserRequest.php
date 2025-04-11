@@ -6,6 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Validation\Rules\Password as RulesPassword;
 
 class UserRequest extends FormRequest
 {
@@ -33,9 +34,9 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users,email' . ($userId ? $userId->id : null), // se não for null, não valida o email
-            'password' => ['required']//, Password::min(8)] // mínimo 8 caracteres
-                                                //  -> letters() // letras
-                                                //  ->numbers()] // números
+            'password' => ['required', RulesPassword::min(8) // mínimo 8 caracteres
+                                                -> letters() // letras
+                                                ->numbers()] // números
         ];
     }
 
@@ -48,8 +49,8 @@ class UserRequest extends FormRequest
             'email.unique' => 'O email já está cadastrado',
             'password.required' => 'o campo senha é obrigatório',
             'password.min' => 'a senha deve ter no mínimo 8 caracteres',
-            // 'password.letters' => 'a senha deve conter pelo menos uma letra',
-            // 'password.numbers' => 'A senha deve conter pelo menos um número'
+            'password.letters' => 'a senha deve conter pelo menos uma letra',
+            'password.numbers' => 'A senha deve conter pelo menos um número'
         ];
     }
 }
