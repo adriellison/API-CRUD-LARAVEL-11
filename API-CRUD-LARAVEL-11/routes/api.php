@@ -18,3 +18,5 @@ Route::get('/users/{user}', [UserController::class, 'show']);
 Route::post('/users',[UserController::class, 'store']);
 // Rota para atualizar um usuário específico
 Route::put('/users/{user}', [UserController::class, 'update']);
+// Rota para apagar um usuário específico
+Route::delete('/users/{user}', [UserController::class, 'destroy']);

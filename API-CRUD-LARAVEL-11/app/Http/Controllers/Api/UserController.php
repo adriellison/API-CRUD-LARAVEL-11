@@ -7,7 +7,6 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -32,7 +31,6 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        //dd($request);
         DB::beginTransaction();
 
         try
@@ -60,8 +58,7 @@ class UserController extends Controller
 
             return response()->json([
                 'status' => false,
-                'message' => "Erro ao cadastrar usuário",
-                'error' => $ex->getMessage() // Exibe a mensagem de erro com detalhes
+                'message' => "Erro ao cadastrar usuário"
             ], 400);
         }
     }
@@ -104,6 +101,30 @@ class UserController extends Controller
             return response()->json([
                 'status' => false,
                 'message' => "Erro ao atualizar usuário" //{$user->name}
+            ], 400);
+        }
+    }
+
+    public function destroy(User $user)
+    {
+        DB::beginTransaction();
+
+        try{
+            $user->delete();
+
+            DB::commit();
+
+            return response()->json([
+                'status' => true,
+                'id' => $user->id,
+                'message' => "Usuário apagado com sucesso!"
+            ], 200);
+        }
+        catch (Exception $ex)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => "Erro ao apagar usuário" //{$user->name}
             ], 400);
         }
     }
